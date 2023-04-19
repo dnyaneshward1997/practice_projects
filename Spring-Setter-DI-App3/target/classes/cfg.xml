@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+	<bean id="collection" class="com.cdac.component.MyCollection">
+	
+		<property name="myArr">
+			<array>
+				<value>Array- Item-1</value>
+				<value>Array- Item-2</value>
+				<value>Array- Item-3</value>
+				<value>Array- Item-4</value>
+				<value>Array- Item-5</value>
+			</array>
+		</property>
+
+		<property name="myList">
+			<list>
+				<value>List- Item-1</value>
+				<value>List- Item-2</value>
+				<value>List- Item-3</value>
+				<value>List- Item-4</value>
+				<value>List- Item-5</value>
+			</list>
+		</property>
+
+		<property name="mySet">
+			<set>
+				<value>Set- Item-1</value>
+				<value>Set- Item-2</value>
+				<value>Set- Item-3</value>
+				<value>Set- Item-4</value>
+				<value>Set- Item-5</value>
+			</set>
+		</property>
+
+		<property name="myMap">
+			<map>
+				<entry key="Map-key-1" value="Map-value-1"></entry>
+				<entry key="Map-key-2" value="Map-value-2"></entry>
+				<entry key="Map-key-3" value="Map-value-3"></entry>
+				<entry key="Map-key-4" value="Map-value-4"></entry>
+				<entry key="Map-key-5" value="Map-value-5"></entry>
+			</map>
+		</property>
+
+
+		<property name="myProperties">
+			<props>
+				<prop key="Prop-key-1">Prop-value-1</prop>
+				<prop key="Propp-key-2">Prop-value-2</prop>
+				<prop key="Prop-key-3"> Prop-value-3</prop>
+				<prop key="Prop-key-4">Prop-value-4</prop>
+				<prop key="Prop-key-5">Prop-value-5></prop>
+			</props>
+		</property>
+
+	</bean>
+
+</beans>
