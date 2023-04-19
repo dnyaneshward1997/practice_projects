@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+
+	<bean id="answerService_1" class="com.cdac.service.AnswerService">
+		<property name="id" value="1"></property>
+		<property name="name" value="Java is a programming language"></property>
+	</bean>
+
+	<bean id="answerService_2" class="com.cdac.service.AnswerService">
+		<property name="id" value="2"></property>
+		<property name="name" value="Java is a platform"></property>
+	</bean>
+
+	<bean id="answerService_3" class="com.cdac.service.AnswerService">
+		<property name="id" value="3"></property>
+		<property name="name" value="Java is a Island"></property>
+	</bean>
+
+
+	<bean id="questionDao" class="com.cdac.dao.QuestionDao">
+		<property name="id" value="1"></property>
+		<property name="name" value="What is Java ?"></property>
+		<property name="answers">
+			<list>
+				<ref bean="answerService_1" />
+				<ref bean="answerService_2" />
+				<ref bean="answerService_3" />
+			</list>
+		</property>
+
+
+	</bean>
+
+
+
+
+</beans>
