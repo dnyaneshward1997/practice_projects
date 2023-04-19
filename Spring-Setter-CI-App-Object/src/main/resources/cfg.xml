@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+	<bean id="dao" class="com.cdac.dao.MyDao"></bean>
+	<bean id="service" class="com.cdac.service.MyService">
+		<constructor-arg ref="dao"></constructor-arg>
+	</bean>
+
+
+	<bean id="studentDao" class="com.cdac.dao.StudentDao"></bean>
+	<bean id="studentService" class="com.cdac.service.StudentService">
+		<constructor-arg ref="studentDao"></constructor-arg>
+
+	</bean>
+
+
+	<bean id="teacherDao" class="com.cdac.dao.TeacherDao"></bean>
+	<bean id="teacherService" class="com.cdac.service.TeacherService">
+		<constructor-arg ref="teacherDao"></constructor-arg>
+
+	</bean>
+
+
+	<bean id="addressDao" class="com.cdac.dao.AddressDao">
+		<constructor-arg value="21,Katkarwadi"></constructor-arg>
+		<constructor-arg value="Ambajogai"></constructor-arg>
+		<constructor-arg value="Maharashtra"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="employeeService"
+		class="com.cdac.service.EmployeeService">
+		<constructor-arg index="0" value="12"></constructor-arg>
+		<constructor-arg index="1" value="Dnyaneshwar Dapkar"></constructor-arg>
+		<constructor-arg ref="addressDao"></constructor-arg>
+	</bean>
+
+
+</beans>
